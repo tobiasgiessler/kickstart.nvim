@@ -649,6 +649,10 @@ require('lazy').setup({
             },
           },
         },
+        ruby_lsp = {
+          mason = false,
+          -- cmd = { vim.fn.expand '/home/tobi/.rbenv/shims/ruby' },
+        },
       }
 
       -- Ensure the servers and tools above are installed
