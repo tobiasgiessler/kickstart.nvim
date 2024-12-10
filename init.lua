@@ -651,7 +651,15 @@ require('lazy').setup({
         },
         ruby_lsp = {
           mason = false,
-          -- cmd = { vim.fn.expand '/home/tobi/.rbenv/shims/ruby' },
+        },
+      }
+
+      -- Use standardrb as formatter and linter
+      local lspconfig = require 'lspconfig'
+      lspconfig.ruby_lsp.setup {
+        init_options = {
+          formatter = 'standard',
+          linters = { 'standard' },
         },
       }
 
