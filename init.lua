@@ -475,6 +475,14 @@ require('lazy').setup({
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
+      local lspconfig = require 'lspconfig'
+      lspconfig.ruby_lsp.setup {
+        init_options = {
+          formatter = 'standard',
+          linters = { 'standard' },
+        },
+      }
+
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -648,18 +656,6 @@ require('lazy').setup({
               -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
-        },
-        ruby_lsp = {
-          mason = false,
-        },
-      }
-
-      -- Use standardrb as formatter and linter
-      local lspconfig = require 'lspconfig'
-      lspconfig.ruby_lsp.setup {
-        init_options = {
-          formatter = 'standard',
-          linters = { 'standard' },
         },
       }
 
