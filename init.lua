@@ -482,6 +482,7 @@ require('lazy').setup({
           linters = { 'standard' },
         },
       }
+      lspconfig.sorbet.setup {}
 
       -- Brief aside: **What is LSP?**
       --
